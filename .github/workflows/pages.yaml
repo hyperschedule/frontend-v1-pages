@@ -38,9 +38,7 @@ jobs:
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
-          cache: npm
           node-version: 18
-          cache-dependency-path: hyperschedule/package-lock.json
       # this thing is old and has weird peer dependencies
       - run: npm i --legacy-peer-deps
       - run: npm run build
