@@ -1,5 +1,10 @@
 name: Generate frontend and post to pages
 
+defaults:
+  run:
+    shell: bash
+    working-directory: hyperschedule
+
 on:
   # Runs on pushes targeting the default branch
   push:
