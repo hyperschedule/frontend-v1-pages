@@ -38,7 +38,9 @@ jobs:
       - name: Use Node.js 18
         uses: actions/setup-node@v3
         with:
+          cache: npm
           node-version: 18
+          cache-dependency-path: hyperschedule/package-lock.json
       # this thing is old and has weird peer dependencies
       - run: npm i --legacy-peer-deps
       - run: npm run build
@@ -48,7 +50,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'dist/'
+          path: 'hyperschedule/dist/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
