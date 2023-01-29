@@ -1,10 +1,5 @@
 name: Generate frontend and post to pages
 
-defaults:
-  run:
-    shell: bash
-    working-directory: hyperschedule
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -27,6 +22,10 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    defaults:
+      run:
+        shell: bash
+        working-directory: hyperschedule
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
