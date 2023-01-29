@@ -39,7 +39,6 @@ jobs:
         with:
           node-version: 18
       # this thing is old and has weird peer dependencies
-      - run: cd hyperschedule
       - run: npm i --legacy-peer-deps
       - run: npm run build
       - name: Setup Pages
